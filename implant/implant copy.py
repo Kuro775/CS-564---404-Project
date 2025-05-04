@@ -46,14 +46,13 @@ def decrypt(enc_data, key):
     return plaintext.decode('utf-8')
 
 #################################
-
 host="127.0.0.1"
 port=4545
-key = 'abcd'
+xor_key = 'abcd'
 password = "abcd"
 aes_key = derive_key(password)
-#################################
 
+#################################
 def receiver(client):
     have_image = False
     while True:
@@ -70,7 +69,7 @@ def receiver(client):
 
         # data receive from server
         if have_image:
-            data = xor_unmask(decode_msg(length = 26, input="cover.png"), key)
+            data = xor_unmask(decode_msg(length = 26, input="cover.png"), xor_key)
             have_image = False
         else:
             data=data.decode('UTF-8') 
