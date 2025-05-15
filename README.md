@@ -1,4 +1,4 @@
-asdsadsad# Operation Blacktrail: Covert Implant and C2 System
+# Operation Blacktrail: Covert Implant and C2 System
 
 ## Overview
 
